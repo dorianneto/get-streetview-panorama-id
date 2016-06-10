@@ -5,7 +5,7 @@ var getPanoID = function(string) {
 	let value = decodeURIComponent(string).match('^https:\/\/.*\!1s(.*)\!2e.*$');
 
 	if (value === null) {
-		throw false;
+		throw "URL incorrect";
 	}
 
 	value = 'F:' + value[1];
@@ -36,7 +36,7 @@ var main = function(url, options) {
 
 		return getPanoID(url);
 	} catch (error) {
-		console.log(error);
+		return error;
 	}
 };
 
