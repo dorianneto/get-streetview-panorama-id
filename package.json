@@ -1,0 +1,34 @@
+{
+  "name": "get-streetview-panorama-id",
+  "version": "0.2.0",
+  "description": "Get the panorama ID from Street View or Photo Sphere url",
+  "main": "index.js",
+  "repository": "dorianneto/get-streetview-panorama-id",
+  "scripts": {
+    "test": "ava"
+  },
+  "author": {
+    "name": "Dorian Neto",
+    "email": "doriansampaioneto@gmail.com",
+    "url": "dorianneto.com.br"
+  },
+  "keywords": [
+    "google",
+    "maps",
+    "pano",
+    "panorama",
+    "streetview",
+    "photosphere",
+    "id",
+    "embed"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.15.2"
+  },
+  "ava": {
+    "files": [
+      "test/*.js"
+    ]
+  }
+}
