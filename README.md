@@ -21,7 +21,7 @@ var url = 'https://www.google.com/maps/contrib/102203465270483008280/photos/@-43
 console.log('Pano ID: ' + get_streetview_pano_id(url) + '\n');
 /*
 Pano ID: F:-CkTS8qmiWLI/VdEDhSb4u6I/AAAAAAAAZKw/fXl6S0fV-EYAEqJfYCq_b5asuJ5iKbgcw
-/*
+*/
 
 console.log('Embed URL: ' + get_streetview_pano_id(url, {embed: true}));
 /*
