@@ -10,7 +10,7 @@ $ npm install --save get-streetview-panorama-id
 ```
 
 ## Usage
-```
+```js
 const get_streetview_pano_id = require('get-streetview-panorama-id');
 
 var url = 'https://www.google.com/maps/contrib/102203465270483008280/photos/@-43.6982751,170.0969594,3a,75y,30.' +
