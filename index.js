@@ -5,12 +5,10 @@ var getPanoID = function(string) {
 	let value = decodeURIComponent(string).match("^https:\/\/.*\!1s(.*)\!2e.*$");
 
 	if (value === null) {
-		throw "URL incorrect";
+		throw "Incorrect URL";
 	}
 
-	value = "F:" + value[1];
-
-	return value;
+	return "F:" + value[1];
 };
 
 // Return Embed URL to use on iframe
@@ -30,7 +28,7 @@ var main = function(url, options) {
 			throw "Expected an object";
 		}
 
-		return options.embed === true ? getEmbed(url) : getPanoID(url);
+		return options.embed ? getEmbed(url) : getPanoID(url);
 	} catch (error) {
 		return error;
 	}
