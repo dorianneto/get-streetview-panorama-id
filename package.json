@@ -1,7 +1,7 @@
 {
   "name": "get-streetview-panorama-id",
-  "version": "0.2.2",
-  "description": "Get the panorama ID from Street View or Photo Sphere url",
+  "version": "1.0.0",
+  "description": "Get the panorama ID as from photo spheres url to can embed on sites",
   "main": "index.js",
   "repository": "dorianneto/get-streetview-panorama-id",
   "scripts": {
