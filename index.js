@@ -1,41 +1,42 @@
 "use strict";
 
 // Return the panorama ID
-const getPanoID = (url) => {
-	let value = decodeURIComponent(url).match("^https:\/\/.*\!1s(.*)\!2e.*$");
+const getPanoID = (options) => {
+  let value = decodeURIComponent(options.url).match("^https:\/\/.*\!1s(.*)\!2e.*$");
 
-	if (value === null) {
-		throw "Incorrect URL";
-	}
+  if (value === null) {
+    throw "Incorrect URL";
+  }
 
-	return "F:" + value[1];
+  return "F:" + value[1];
 };
 
 // Return Embed URL to use on iframe
-const getEmbed = (url) => {
-	let id = getPanoID(url);
-	let embedURL = "https://www.google.com/maps/embed/v1/streetview?pano=" + id + "&key=YOUR_APIKEY";
+const getEmbed = (options) => {
+  let id       = getPanoID(options);
+  let key      = options.key || "YOUR_APIKEY";
+  let embedURL = "https://www.google.com/maps/embed/v1/streetview?pano=" + id + "&key=" + key;
 
-	return embedURL;
+  return embedURL;
 };
 
 const isObject = (item) => {
-	if (typeof item !== "object") {
-		throw "Expected an object";
-	}
+  if (typeof item !== "object") {
+    throw "Expected an object";
+  }
 };
 
 // Method main
-function main(url, options) {
-	try {
-		options = options || {};
+function main(options) {
+  try {
+    options = options || {};
 
-		isObject(options);
+    isObject(options);
 
-		return options.embed ? getEmbed(url) : getPanoID(url);
-	} catch (error) {
-		return error;
-	}
+    return options.embed ? getEmbed(options) : getPanoID(options);
+  } catch (error) {
+    return error;
+  }
 }
 
 module.exports = main;
